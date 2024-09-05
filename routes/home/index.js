@@ -2,13 +2,10 @@
 
 const express = require("express");
 const router = express.Router();
+const ctrl = require("./home.ctrl");
 
-router.get("/", (req, res) => {
-  res.render("home/index");
-});
+router.get("/", ctrl.hello);
 
-router.get("/login", (req, res) => {
-  res.render("home/login");
-});
+router.get("/login", ctrl.login);
 
 module.exports = router;
